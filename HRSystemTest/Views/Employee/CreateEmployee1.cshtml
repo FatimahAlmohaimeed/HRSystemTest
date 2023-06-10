@@ -1,0 +1,32 @@
+﻿
+@*@{
+    ViewBag.Title = "CreateEmployee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+
+<h2>CreateEmployee</h2>
+
+
+<script type="text/javascript">
+    function GetDynamicTextbox(value) {
+        return '<div><input type="text" name="texttest" style="width:200px";/><input type="button" onclick="RemoveTextBox(this)" value="Remove"/></div>'
+
+    }
+    function AddTextBox() {
+        var div = document.createElement('DIV');
+        div.innerHTML = GetDynamicTextbox("");
+        document.getElementById("dicCont").appendChild(div);
+    }
+    function RemoveTextBox(div) {
+        document.getElementById("dicCont").removeChild(div.parentNode.parentNode);
+    }
+</script>
+<body>
+    <div>
+        <div id="dicCont">
+            <div>
+                <input type="text" name="texttest" style="width:200px";/><input type="button" onclick="AddTextBox()" value="Add"/>
+            </div>
+        </div>
+    </div>
+</body>
